@@ -59,6 +59,7 @@ function Navbar() {
                 </Modal.Header>
 
                 <Modal.Body>
+                  Profile Image <br></br>
                   Name: Adam
                 </Modal.Body>
 
