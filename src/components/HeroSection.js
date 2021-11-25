@@ -5,10 +5,12 @@ import './HeroSection.css'
 import latte from '../components/Images/Latte.jpg'
 import mocha from '../components/Images/Mocha.jpg'
 
+
 function HeroSection() {
     return (
         <div className='background'>
             <div className='hero-container'>
+           
                 <div className='welcome'>
                 Have a Coffee with Coffee Machine
                 </div>

@@ -3,7 +3,7 @@ import { Button } from '../Button'
 
 export default function Profile() {
     return (
-        <div>
+        <div >
             <h1>Hello Everyone</h1>
             <p>nice to meet you!</p>
             <div className='btnP'>

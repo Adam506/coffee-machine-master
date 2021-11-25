@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import { Button } from './Button';
 import './Navbar.css';
+import Modal from "react-bootstrap/Modal";
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -9,7 +10,12 @@ function Navbar() {
   
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+
+    const [show, setShow] = useState(false);
   
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const showButton = () => {
       if (window.innerWidth <= 960) {
         setButton(false);
@@ -41,6 +47,35 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
+              <li
+                className='nav-links'
+                onClick={handleShow}
+              >
+                Profile
+              </li>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Profile</Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+                  Name: Adam
+                </Modal.Body>
+
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    
+                    <Link to='/' onClick={closeMobileMenu}>
+                    Close
+                    </Link>
+                  </Button>
+              
+                </Modal.Footer>
+              </Modal>
+            </li>
+  
+            
+            {/* <li className='nav-item'>
               <Link
                 to='/profile'
                 className='nav-links'
@@ -48,7 +83,7 @@ function Navbar() {
               >
                 Profile
               </Link>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <Link
                 to='/log-in'
@@ -75,5 +110,7 @@ function Navbar() {
     </>
     )
 }
+
+
 
 export default Navbar
